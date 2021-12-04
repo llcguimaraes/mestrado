@@ -1,0 +1,38 @@
+﻿<Window x:Class="Microsoft.Samples.Kinect.BodyBasics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Body Basics" 
+        Height="600" Width="700" 
+        Loaded="MainWindow_Loaded"
+        Closing="MainWindow_Closing">
+    <Window.Resources>
+        <SolidColorBrush x:Key="MediumGreyBrush" Color="#ff6e6e6e" />
+        <SolidColorBrush x:Key="KinectPurpleBrush" Color="#ff52318f" />
+        <SolidColorBrush x:Key="KinectBlueBrush" Color="#ff00BCF2" />
+    </Window.Resources>
+    <Grid Margin="10,0,10,50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Viewbox Grid.Row="1" HorizontalAlignment="Center">
+            <Image Source="{Binding ImageSource}" Stretch="UniformToFill" />
+        </Viewbox>
+
+        <StatusBar Grid.Row="2" HorizontalAlignment="Stretch" Name="statusBar" VerticalAlignment="Bottom" Background="White" Foreground="{StaticResource MediumGreyBrush}">
+            <StatusBarItem Content="{Binding StatusText}" />
+        </StatusBar>
+        <CheckBox x:Name="flexao_extensao_ombro" Content="Flexão/Extensão Ombro D" HorizontalAlignment="Left" Height="16" Margin="-3,20,0,-30" Grid.Row="2" VerticalAlignment="Top" Width="158"/>
+        <CheckBox x:Name="abducao_ombro" Content="Abdução Ombro D" HorizontalAlignment="Left" Height="16" Margin="157,20,0,-30" Grid.Row="2" VerticalAlignment="Top" Width="122"/>
+        <CheckBox x:Name="aducao_ombro" Content="Adução Ombro D" HorizontalAlignment="Left" Height="16" Margin="279,20,0,-30" Grid.Row="2" VerticalAlignment="Top" Width="114"/>
+        <CheckBox x:Name="flexao_extensao_ombro_esquerdo" Content="Flexão/Extensão Ombro E" HorizontalAlignment="Left" Height="16" Margin="-3,41,0,-51" Grid.Row="2" VerticalAlignment="Top" Width="158"/>
+        <CheckBox x:Name="abducao_ombro_esquerdo" Content="Abdução Ombro E" HorizontalAlignment="Left" Height="16" Margin="157,41,0,-51" Grid.Row="2" VerticalAlignment="Top" Width="122"/>
+        <CheckBox x:Name="aducao_ombro_esquerdo" Content="Adução Ombro E" HorizontalAlignment="Left" Height="16" Margin="279,41,0,-51" Grid.Row="2" VerticalAlignment="Top" Width="114"/>
+        <CheckBox x:Name="flexao_extensao_cotovelo_d" Content="Flexão/Extensão Cot D" HorizontalAlignment="Left" Height="16" Margin="398,20,0,-30" Grid.Row="2" VerticalAlignment="Top" Width="141"/>
+        <CheckBox x:Name="pronacao_supinacao_cotovelo_d" Content="Pronação/Supinação Cot ]" HorizontalAlignment="Left" Height="16" Margin="539,20,0,-30" Grid.Row="2" VerticalAlignment="Top" Width="124"/>
+        <CheckBox x:Name="flexao_extensao_cotovelo_e" Content="Flexão/Extensão Cot E" HorizontalAlignment="Left" Height="16" Margin="398,41,0,-51" Grid.Row="2" VerticalAlignment="Top" Width="141"/>
+        <CheckBox x:Name="pronacao_supinacao_cotovelo_e" Content="Pronação/Supinação Cot E" HorizontalAlignment="Left" Height="16" Margin="539,41,0,-51" Grid.Row="2" VerticalAlignment="Top" Width="124"/>
+    </Grid>
+</Window>
